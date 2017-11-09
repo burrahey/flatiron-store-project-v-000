@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108023519) do
+ActiveRecord::Schema.define(version: 20171109013728) do
 
   create_table "carts", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "status"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -53,9 +54,9 @@ ActiveRecord::Schema.define(version: 20171108023519) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "current_cart_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "current_cart_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
