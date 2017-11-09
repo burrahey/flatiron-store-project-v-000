@@ -10,8 +10,6 @@
       <strong>There are only <%= line_item.item.inventory %> left in stock.</strong>
     <% end %> </p>
   <% end %>
+  <p>Order total: <strong><%= number_to_currency(current_cart.total/100.00) %></strong> </p>
+  <%= button_to 'Checkout', checkout_path if current_cart.status != 'submitted' %>
 <% end %>
-
-<p>Order total: <strong><%= number_to_currency(current_cart.total/100.00) %></strong> </p>
-
-<%= button_to 'Checkout', checkout_path if current_cart.status != 'submitted' %>

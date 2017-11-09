@@ -39,8 +39,7 @@ class LineItemsController < ApplicationController
         format.html { redirect_to @cart, notice: 'Line item was successfully created.' }
         format.json { render :show, status: :created, location: @cart }
       else
-        format.html { render :new }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        redirect_to root_path
       end
     end
   end
